@@ -1,3 +1,9 @@
+/*
+
+Name: Bhumit Jayantilal Prajapati
+StudentNumber: 8981644
+
+*/
 const mongoose = require("mongoose");
 
 const bookSchema = new mongoose.Schema({
