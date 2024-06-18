@@ -6,13 +6,11 @@ const createBook = async (req, res) => {
     const { bookId, title, author, genre, year } = req.body;
     const existingBook = await Book.findOne({ bookId });
     if (existingBook) {
-      return res
-        .status(400)
-        .json({ message: "Book with this bookId already exists" });
+      return res.status(400).json({ message: "Book with this bookId is already exists" });
     }
     const newBook = new Book({ bookId, title, author, genre, year });
     await newBook.save();
-    res.status(201).json(newBook);
+    res.status(200).json(newBook);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
